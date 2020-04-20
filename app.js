@@ -124,8 +124,3 @@ app.set('view engine', 'ejs')
 app.get('/', function(req, res) {
 	res.render('splash.ejs', { gamesActive: activeReal, gamesPlayed: active });
 })
-
-
-
-
-server.listen(port);
