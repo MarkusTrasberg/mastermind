@@ -1,0 +1,55 @@
+<html><head>
+<meta charset="utf-8">
+<title>MasterMindGameCreator</title>
+
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/creategame.css">
+<center>
+<h1 style="font-size: 100px;">MasterMind</h1>
+<!-- <span id="hello"></span> -->
+<h1 id="winOrLose" margin: 10px;></h1>
+<a href="splash.html"><h1 id="backToHome"></h1></a>
+
+<div style="width: 370px; height: 50px; margin-left: 35px;">
+
+<div style="width: 34px; height: 14px; float: left; margin: 10px;">
+<div id="103" Style="width: 10px; height: 10px; border-radius: 50%; float: left; margin: 2px;"></div>
+<div id="102" Style="width: 10px; height: 10px; border-radius: 50%; float: left; margin: 2px;"></div>
+<div id="101" Style="width: 10px; height: 10px; border-radius: 50%; float: left; margin: 2px;"></div>
+<div id="100" Style="width: 10px; height: 10px; border-radius: 50%; float: left; margin: 2px;"></div>
+</div>
+<div style="width: 325px; height: 50px; margin: 10px;">
+<div id="3" onclick = "mouseClick(3)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="2" onclick = "mouseClick(2)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="1" onclick = "mouseClick(1)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="0" onclick = "mouseClick(0)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<button id ="ghost" onclick = "createGameClick()">Create</button>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<br>
+<div id="ghost2" style="background-color:#D1C6C0; padding: 10px; width: 460px; height: 50px; border-radius: 20px;">
+<div onclick = "setMouseColor(0)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; background-color: red; float: left; margin-right: 5px;"></div>
+<div onclick = "setMouseColor(1)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; background-color: blue; float: left; margin-right: 5px;"></div>
+<div onclick = "setMouseColor(2)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; background-color: white; float: left; margin-right: 5px;"></div>
+<div onclick = "setMouseColor(3)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; background-color: black; float: left; margin-right: 5px;"></div>
+<div onclick = "setMouseColor(4)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; background-color: purple; float: left; margin-right: 5px;"></div>
+<div onclick = "setMouseColor(5)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; background-color: brown; float: left; margin-right: 5px;"></div>
+<div onclick = "setMouseColor(6)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; background-color: green; float: left; margin-right: 5px;"></div>
+<div onclick = "setMouseColor(7)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; background-color: yellow; float: left; margin-right: 5px;"></div>
+</div>
+<h2 id="gameId"></h2>
+<h3>Pick your extra-secret color code! Note that duplicate colors are allowed but make the solving harder. </h3>
+ <h3>  After pressing "Check" you recieve a ID that other person can use.</h3> 
+
+<br>
+</center>
+<script type="text/javascript" src='javascripts/CreateGame.js'> </script>
+</body>
+</HTML>

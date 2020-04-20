@@ -1,0 +1,25 @@
+#ghost {
+    background-color: #FF7F50;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 8px 2px;
+    cursor: pointer;
+    margin-left: 280px;
+    margin-top: -55px;
+    transition: width 0.3s, height 0.3s, transform 0.3s;
+    transition-delay: 2s;
+  }
+#ghost:hover {
+    background: #f25f4c;
+    transform: rotate(360deg);
+}
+
+#move {
+    padding-top: 300px;
+
+}

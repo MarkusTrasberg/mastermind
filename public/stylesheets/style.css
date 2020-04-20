@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:500&display=swap');
+
+body {
+  padding: 50px;
+  background-color: #EEE2DC;
+  color: #123C69;
+}
+
+
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 100px;
+    margin-top: -20px;
+}
+h1:active {
+  color: #e53170;
+}
+
+h4 {
+    padding-top: -100px;
+}
+h5, h4, h2, h3, p, a {
+    font-family: 'Raleway', sans-serif; 
+}
+h5 {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: -30px;
+}
+h5::before {
+  content: "Game created by";
+}
+
+h5::after {
+  content: " Otte and Markus";
+}
+
+
+

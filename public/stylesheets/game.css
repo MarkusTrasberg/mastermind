@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:500&display=swap');
+
+
+#33, #34, #35, #36 {
+    font-family: 'Raleway', sans-serif; 
+}
+
+h1 {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    font-size: 100px;
+    margin-top: -50px;
+}
+#button {
+    background-color: #FF7F50;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 8px 2px;
+    cursor: pointer;
+    margin-left: 280px;
+    margin-top: -55px;
+    transition: width 0.3s, height 0.3s, transform 0.3s;
+    transition-delay: 2s;
+  }
+#button:hover {
+    background: #f25f4c;
+    transform: rotate(360deg);
+}
+#brain {
+    position: absolute;
+    width: 200px;
+    margin-left: -400px;
+    animation-name: brain;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    z-index: 999;
+
+  }
+
+  
+@keyframes brain {
+    0%   {margin-left: -600px; margin-top:100px;}
+    25%  {margin-left: -400px; margin-top: 300px;}
+    50%  {margin-left: -650px; margin-top: 300px;}
+    75%  {margin-left: -350px; margin-top:100px;}
+    100% {margin-left: -600px; margin-top: 100px;}
+  }
+
+  .select {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    border: 1px solid black;
+    float: left; 
+    margin-right: 5px;
+  }
+  .select:hover {
+      width: 52px;
+      height: 52px;
+  }
+  
+
+#red {
+    background-color: red
+}
+
+#blue {
+    background-color: blue;
+}
+
+#white {
+    background-color: white;
+ }
+
+#black {
+    background-color: black;
+}
+#purple {
+    background-color: purple;
+}
+#brown {
+    background-color: brown;
+}
+#green {
+    background-color: green;
+}
+#yellow {
+    background-color: yellow;
+}

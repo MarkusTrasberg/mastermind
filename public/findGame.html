@@ -1,0 +1,195 @@
+<html><head>
+<meta charset="utf-8">
+<title>OnlinePlay</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/game.css">
+<center>
+<h1 style="font-size: 80px">MasterMind</h1>
+<div id="finder" style="padding-top: 80px;">
+<h3>Search for the game-id:</h3>
+<input type="number"
+           id="myText"
+           value="0">  
+<button onclick = "findGameClick()" style="width: 60px; height: 20px; margin-top:15px;">Find</button>
+</div>
+<br>
+<br>
+<br>
+<h2 id="winOrLose" margin: 10px;></h2>
+<a href="splash.html"><h2 id="backToHome"></h2></a>
+
+<div id="playground" style="background-color:#EEE2DC; width: 400px; padding-top: 30px; margin-top: 0px; padding-bottom: 30px; float: center;">
+
+<h3>Rules: Solve the puzzle by guessing the right color sequence.</h3>
+<label id="minutes">00</label>:<label id="seconds">00</label>
+<img id="brain" src="images/brain.png"></img>
+
+<div style="width: 335px; height: 50px;">
+
+
+<div style="width: 230px; height: 50px; margin: 10px;">
+<div id="36" onclick = "mouseClick(36)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px; background-color: #D3D3D3">?</div>
+<div id="35" onclick = "mouseClick(35)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px; background-color: #D3D3D3">?</div>
+<div id="34" onclick = "mouseClick(34)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px; background-color: #D3D3D3">?</div>
+<div id="33" onclick = "mouseClick(33)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px; background-color: #D3D3D3">?</div>
+</div>
+
+</div>
+
+<div style="width: 335px; height: 50px;">
+
+<div style="width: 34px; height: 14px; float: left; margin: 10px;">
+<div id="131" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="130" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="129" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="128" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+</div>
+<div style="width: 230px; height: 50px; margin: 10px;">
+<div id="32" onclick = "mouseClick(32)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="31" onclick = "mouseClick(31)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="30" onclick = "mouseClick(30)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="29" onclick = "mouseClick(29)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+</div>
+
+</div>
+
+<div style="width: 335px; height: 50px;">
+
+<div style="width: 34px; height: 14px; float: left; margin: 10px;">
+<div id="127" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="126" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="125" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="124" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+</div>
+<div style="width: 230px; height: 50px; margin: 10px;">
+<div id="28" onclick = "mouseClick(28)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="27" onclick = "mouseClick(27)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="26" onclick = "mouseClick(26)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="25" onclick = "mouseClick(25)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+</div>
+
+</div>
+
+<div style="width: 335px; height: 50px;">
+
+<div style="width: 34px; height: 14px; float: left; margin: 10px;">
+<div id="123" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="122" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="121" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="120" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+</div>
+<div style="width: 230px; height: 50px; margin: 10px;">
+<div id="24" onclick = "mouseClick(24)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="23" onclick = "mouseClick(23)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="22" onclick = "mouseClick(22)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="21" onclick = "mouseClick(21)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+</div>
+
+</div>
+
+<div style="width: 335px; height: 50px;">
+
+<div style="width: 34px; height: 14px; float: left; margin: 10px;">
+<div id="119" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="118" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="117" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="116" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+</div>
+<div style="width: 230px; height: 50px; margin: 10px;">
+<div id="20" onclick = "mouseClick(20)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="19" onclick = "mouseClick(19)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="18" onclick = "mouseClick(18)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="17" onclick = "mouseClick(17)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+</div>
+
+</div>
+
+<div style="width: 335px; height: 50px;">
+
+<div style="width: 34px; height: 14px; float: left; margin: 10px;">
+<div id="115" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="114" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="113" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="112" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+</div>
+<div style="width: 230px; height: 50px; margin: 10px;">
+<div id="16" onclick = "mouseClick(16)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="15" onclick = "mouseClick(15)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="14" onclick = "mouseClick(14)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="13" onclick = "mouseClick(13)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+</div>
+
+</div>
+
+<div style="width: 335px; height: 50px;">
+
+<div style="width: 34px; height: 14px; float: left; margin: 10px;">
+<div id="111" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="110" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="109" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="108" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+</div>
+<div style="width: 230px; height: 50px; margin: 10px;">
+<div id="12" onclick = "mouseClick(12)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="11" onclick = "mouseClick(11)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="10" onclick = "mouseClick(10)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="9" onclick = "mouseClick(9)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+</div>
+
+</div>
+
+<div style="width: 335px; height: 50px;">
+
+<div style="width: 34px; height: 14px; float: left; margin: 10px;">
+<div id="107" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="106" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="105" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="104" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+</div>
+<div style="width: 230px; height: 50px; margin: 10px;">
+<div id="8" onclick = "mouseClick(8)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="7" onclick = "mouseClick(7)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="6" onclick = "mouseClick(6)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="5" onclick = "mouseClick(5)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+</div>
+
+</div>
+
+<div style="width: 370px; height: 50px; margin-left: 35px;">
+
+<div style="width: 34px; height: 14px; float: left; margin: 10px;">
+<div id="103" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="102" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="101" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+<div id="100" Style="width: 10px; height: 10px; border-radius: 50%; border: 1px solid black; float: left; margin: 2px;"></div>
+</div>
+<div style="width: 325px; height: 50px; margin: 10px;">
+<div id="4" onclick = "mouseClick(4)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="3" onclick = "mouseClick(3)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="2" onclick = "mouseClick(2)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<div id="1" onclick = "mouseClick(1)" Style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; float: left; margin-right: 5px;"></div>
+<button id="button" onclick = "checkClick()">Check</button>
+</div>
+
+</div>
+
+</div>
+
+<br>
+<div id="end" style="background-color:#D1C6C0; padding: 10px; width: 460px; height: 50px; border-radius: 20px;">
+    <div class="select" id="red" onclick = "setMouseColor(0)"></div>
+    <div class="select" id="blue" onclick = "setMouseColor(1)"></div>
+    <div class="select" id="white" onclick = "setMouseColor(2)"></div>
+    <div class="select" id="black" onclick = "setMouseColor(3)"></div>
+    <div class="select" id="purple" onclick = "setMouseColor(4)"></div>
+    <div class="select" id="brown" onclick = "setMouseColor(5)"></div>
+    <div class="select" id="green" onclick = "setMouseColor(6)"></div>
+    <div class="select" id="yellow" onclick = "setMouseColor(7)"></div>
+</div>
+<h5></h5>
+</center>
+<script type="text/javascript" src='javascripts/findGame.js'> </script>
+</body>
+</HTML>
