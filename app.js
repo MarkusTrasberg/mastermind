@@ -41,7 +41,7 @@ var app = express();
 
 app.use(express.static(__dirname + "/public"));
 
-var server = http.createServer(app);
+var server = http.createServer(app).listen(process.env.PORT || 3000);
 const wss = new websocket.Server({ server });
 
 wss.on("connection", function(ws) { 
