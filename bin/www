@@ -19,7 +19,7 @@ var port = normalizePort(process.env.PORT || '3000');
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = http.createServer(app).listen(port);
 
 /**
  * Listen on provided port, on all network interfaces.
