@@ -114,4 +114,4 @@ ws.on("message", function incoming(message) {
 app.get("/play", indexRouter);
 app.get("/", indexRouter);
 
-server.listen(port);
+//server.listen(port);
