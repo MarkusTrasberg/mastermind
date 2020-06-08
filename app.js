@@ -28,6 +28,7 @@ var games = [];
 var players = [];
 var active = 0;
 var activeReal = 0;
+var played = 0;
 var activePlayers = 0;
 
 var express = require("express");
@@ -40,7 +41,7 @@ var app = express();
 
 app.use(express.static(__dirname + "/public"));
 
-var server = http.createServer(app);
+var server = http.createServer(app).listen(process.env.PORT || 3000);
 const wss = new websocket.Server({ server });
 
 wss.on("connection", function(ws) { 
@@ -52,18 +53,20 @@ ws.on("message", function incoming(message) {
 	}else{
 
 	if(message === "GIMME Splash!"){
-		ws.send(active);
+		ws.send(played);
 	}else{
 
 	if(isNaN(message) ) {
-		console.log(message[0]);
-	console.log(message[3]);
 	if(message[0] === '-'){
+		played++;
 		activeReal--;
 		for(var q = 0; q != active; q++){
       		if(message[3] == games[q].getId()){
+      			try{
       			games[q].getCreator().send(message);
-      			console.log("id is found:" + message);
+      		}catch{
+      			console.log("Creator is offline!");
+      		}
       		}
       	}
 		}else{	
@@ -83,7 +86,11 @@ ws.on("message", function incoming(message) {
       		players[activePlayers] = tempPlayer;
       		activePlayers ++;
       		ws.send(temp);
+      		try{
       		games[i].getCreator().send('-1');
+      	}catch{
+      		console.log("Creator is offline!");
+      	}
       		return;
       	}
       }
@@ -92,16 +99,16 @@ ws.on("message", function incoming(message) {
 }
 });
 	ws.on('close', function incoming(message) {
-		console.log("Got the closing part!")
 		for(var z = 0; z != activePlayers; z++){
 			if(players[z].getPlayer() == ws){
-				console.log("Player found!")
 				gameId = players[z].getGameId();
-				console.log(gameId);
 				for(var y = 0; y != active; y++){
 					if(games[y].getId() == gameId){
-						console.log("I'm trying to send it!")
+						try{
 						games[z].getCreator().send(-3);
+					}catch{
+						console.log("Creator is offline!");
+					}
 					}
 				}
 			}
@@ -113,5 +120,7 @@ ws.on("message", function incoming(message) {
 
 app.get("/play", indexRouter);
 app.get("/", indexRouter);
-
-server.listen(port);
+app.set('view engine', 'ejs')
+app.get('/', function(req, res) {
+	res.render('splash.ejs', { gamesActive: activeReal, gamesPlayed: active });
+})
