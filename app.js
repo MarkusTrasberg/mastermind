@@ -35,12 +35,12 @@ var http = require("http");
 var indexRouter = require("./routes/index");
 var websocket = require("ws");
 
-var port = process.argv[2];
+var port = process.env.PORT || 3000;
 var app = express();
 
 app.use(express.static(__dirname + "/public"));
 
-var server = http.createServer(app).listen(process.env.PORT || 3000);
+var server = http.createServer(app).listen(port);
 const wss = new websocket.Server({ server });
 
 wss.on("connection", function(ws) { 
