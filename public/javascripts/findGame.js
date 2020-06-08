@@ -1,5 +1,3 @@
-var done = false;
-
 function findGameClick(){
 	var x =  document.getElementById("myText").value;
 	gameId = x;
@@ -8,51 +6,18 @@ function findGameClick(){
 
 var socket = new WebSocket("ws://localhost:3000");
 socket.onmessage = function(event){
-var minutesLabel = document.getElementById("minutes");
-        var secondsLabel = document.getElementById("seconds");
-        var totalSeconds = 0;
-        setInterval(setTime, 1000);
-
-        function setTime()
-        {
-            secondsLabel.innerHTML = zero(totalSeconds%60);
-            minutesLabel.innerHTML = zero(parseInt(totalSeconds/60));
-            if(done){}
-            else{
- 				++totalSeconds;
-            }
-
-             
-            
-        }
-
-        function zero(time)
-        {
-            var timeString = time + "";
-            if(timeString.length < 2)
-            {
-                return "0" + timeString;
-            }
-            else
-            {
-                return timeString;
-            }
-        }
-
+	console.log(event.data);
 	solution[0] = event.data[0];
 	solution[1] = event.data[2];
 	solution[2] = event.data[4];
 	solution[3] = event.data[6];
 
 	document.getElementById("winOrLose").innerHTML = "The game has loaded. Good luck!";
-	document.getElementById("end").style.visibility = "visible";
+	document.getElementById("colors").style.visibility = "visible";
 	document.getElementById("playground").style.visibility = "visible";
-	document.getElementById("finder").style.visibility = "hidden";
-	document.getElementById("finder").style.float = "right";
-	document.getElementById("finder").style.width = "0px";
 }
 socket.onopen = function(){	
-	document.getElementById("end").style.visibility = "hidden";
+	document.getElementById("colors").style.visibility = "hidden";
 	document.getElementById("playground").style.visibility = "hidden";
 };
 
@@ -93,9 +58,9 @@ function checkClick(){
 	}
 	var correct = compareCorrect(arr1, solution);
 	if(correct == 4){
+		console.log("You won!");
 		round = round + 2000;
 		document.getElementById("winOrLose").innerHTML = "You won!";
-		done = true;
 		socket.send(['-2', gameId]);
 			document.getElementById("backToHome").innerHTML = "Click here to go back.";
 			peggle = peggle - 3;
@@ -108,6 +73,7 @@ function checkClick(){
 			return;
 	}
 	var semi = compareSemi(arr1, solution) - correct;
+	console.log(semi);
 
 	for(var i = 0; i != correct; i++){
 		document.getElementById(String(peggle)).style.backgroundColor = "green";
@@ -129,7 +95,6 @@ function checkClick(){
 		round = round + 2000;
 		document.getElementById("backToHome").innerHTML = "Click here to go back.";
 		document.getElementById("winOrLose").innerHTML = "You lost! The right answer is:";
-		done = true;
 		socket.send(['-3', gameId]);
 		document.getElementById(String(33)).style.backgroundColor = getColor(solution[0]);
 		document.getElementById(String(34)).style.backgroundColor = getColor(solution[1]);

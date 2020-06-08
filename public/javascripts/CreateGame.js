@@ -66,8 +66,9 @@ function getColor(colorId){
 
 var socket = new WebSocket("ws://localhost:3000");
 socket.onmessage = function(event){
-	console.log(event);
+	console.log(event.data);
 	if(event.data[0] === '-'){
+		console.log(event.data);
 		if(event.data[1] == 1){
 		document.getElementById("gameId").innerHTML = "Your game is being played!";
 		}

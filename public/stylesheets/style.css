@@ -3,7 +3,6 @@
 
 body {
   padding: 50px;
-  background-color: #EEE2DC;
   color: #123C69;
 }
 
@@ -27,7 +26,6 @@ h5, h4, h2, h3, p, a {
 h5 {
   position: relative;
   margin-top: 30px;
-  margin-bottom: -30px;
 }
 h5::before {
   content: "Game created by";
@@ -36,6 +34,4 @@ h5::before {
 h5::after {
   content: " Otte and Markus";
 }
-
-
 

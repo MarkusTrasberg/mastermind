@@ -36,6 +36,7 @@ function checkClick(){
 		}
 	}
 	var correct = compareCorrect(arr1, solution);
+	console.log(correct);
 	if(correct == 4){
 		console.log("You won!");
 		round = round + 2000;
@@ -51,6 +52,7 @@ function checkClick(){
 			return;
 	}
 	var semi = compareSemi(arr1, solution) - correct;
+	console.log(semi);
 
 	for(var i = 0; i != correct; i++){
 		document.getElementById(String(peggle)).style.backgroundColor = "green";
@@ -109,6 +111,28 @@ function getColor(colorId){
 		return "yellow";
 	}
 }
+
+
+// var button = document.querySelectorAll(".button1");
+// button[0].addEventListener('click', function(evt){console.log(evt)});
+
+//document.querySelector(".button2").addEventListener("click", addToArray) 
+
+// function addToArray(arr) {
+//     document.getElementsByClassName("entry1").classList.add('red');
+   
+//     if
+// }
+
+
+function filled(arr) {
+    while (arr.length < 4) {
+        addToArray();
+    }
+} 
+
+
+
 
 function compareCorrect(arr, arr2) { // checks if ball is correct color and correct position, returns int
     let correct = 0;
